@@ -874,11 +874,12 @@ bot.start(async (ctx) => {
 • Delay Spam
 • Bulldozer X Delay
 • Blank Andro
-• Dan lain lain
+• Forclose
+• Crash
 ━━━━━━━━━━━━━━━━━━
 𝗣𝗥𝗜𝗖𝗘 𝗦𝗖𝗥𝗜𝗣𝗧
-Full Update : 5000
-Reseller     : 15,000
+Full Update : 5.000
+Reseller     : 15.000
 ━━━━━━━━━━━━━━━━━━
 
 𝘚𝘤𝘳𝘪𝘱𝘵 𝘣𝘶𝘨 𝘸𝘢 
@@ -1100,7 +1101,7 @@ bot.action('/asupan', async (ctx) => {
 bot.action('/bug', async (ctx) => {
     const bugMenu = `
 \`\`\`javascript
-╭━━━〔 ALL FITURE • BEBAS SPAM?MYBE  〕━━━╮
+╭━━━〔 ALL FITURE • BEBAS SPAM MYBE 〕━━━╮
 
 📱 ANDROID • BUGS ✦
 │ /xbugs      ➜ 628xxxx
@@ -1111,8 +1112,7 @@ bot.action('/bug', async (ctx) => {
 🍏 IOS • BUGS ✦
 │ /xflow     ➜ 628xxxx
 │ /xenon      ➜ 628xxxx
-
-GW BLM DAPET NOKOS AND FUNC BARU JADI BLM TAU WORK ATAU KAGA TRY AJA , by @Kayrosukamieayam
+GW BLM TEST JADI KALO GA WORK YAUDAH , GW JUGA BLM TERLALU BANYAK FUNCTION TUNGGU UPDATE BARU AJA @Kayrosukamieayam
 ━━━━━━━━━━━━━━━━━━━━━━\`\`\`
 `;
 
@@ -1411,7 +1411,7 @@ bot.action('/all', async (ctx) => {
     const allMenu = `
 \`\`\`javascript
 lu ngapain kocakk. btw selamat menggunakan script bug gacor gunakan dengan baik yaa!!
-By Fadzx\`\`\`
+By Kay\`\`\`
  `;
 
     const keyboard = [
@@ -1442,29 +1442,6 @@ By Fadzx\`\`\`
             console.error("Error editMessageCaption (all):", error);
         }
     }
-});
-
-bot.commmand("update", async (ctx) => {
-    const chatId = ctx.chat.id;
-
-    const repoRaw = "https://raw.githubusercontent.com/syagtg147-arch/DreamX/main/Token.json";
-
-    bot.sendMessage(chatId, "⏳ Sedang mengecek update...");
-
-    try {
-        const { data } = await axios.get(repoRaw);
-
-        if (!data) return bot.sendMessage(chatId, "❌ Update gagal: File kosong!");
-
-        fs.writeFileSync("./index.js", data);
-
-        bot.sendMessage(chatId, "✅ Update berhasil!\nSilakan restart bot.");
-
-        process.exit(); // restart jika pakai PM2
-    } catch (e) {
-        console.log(e);
-        bot.sendMessage(chatId, "❌ Update gagal. Pastikan repo dan file index.js tersedia.");
-    }
 });
 
 bot.command("trackip", checkPremium, async (ctx) => {
@@ -4785,5 +4762,25 @@ async function DelayNgawi(sock, target) {
 }
 
 //End Funct
+
+//menu update
+bot.command("update", async (ctx) => {
+  const repoRaw = "https://raw.githubusercontent.com/syagtg147-arch/DreamX/main/index.js";
+  
+  ctx.reply("⏳ Sedang mengecek update...");
+
+  try {
+    const { data } = await axios.get(repoRaw);
+    if (!data) return ctx.reply("❌ Update gagal: File kosong!");
+
+    fs.writeFileSync("./index.js", data);
+    ctx.reply("✅ Update berhasil!\nBot restart 2 detik lagi...");
+    
+    setTimeout(() => process.exit(0), 2000);
+  } catch (e) {
+    console.log(e);
+    ctx.reply("❌ Update gagal: " + e.message);
+  }
+});
 
 bot.launch()
