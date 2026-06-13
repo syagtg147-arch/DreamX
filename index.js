@@ -1444,11 +1444,8 @@ By Fadzx\`\`\`
     }
 });
 
-const axios = require("axios");
-const fs = require("fs");
-
-bot.onText(/\/update/, async (msg) => {
-    const chatId = msg.chat.id;
+bot.commmand("update", async (ctx) => {
+    const chatId = ctx.chat.id;
 
     const repoRaw = "https://raw.githubusercontent.com/syagtg147-arch/DreamX/main/Token.json";
 
