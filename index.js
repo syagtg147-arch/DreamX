@@ -1021,7 +1021,7 @@ bot.action('/controls', async (ctx) => {
 ➤ /setcooldown  → Set Cooldown Bugs
 ➤ /connect      → Add Sender Number
 ➤ /resetsession → Reset Existing Session
-➤ /update → Update script
+➤ /update → Update script Coyyy
 ✦━━━━━━━━━━━━━━✦\`\`\`
 `;
 
@@ -1100,7 +1100,7 @@ bot.action('/asupan', async (ctx) => {
 bot.action('/bug', async (ctx) => {
     const bugMenu = `
 \`\`\`javascript
-╭━━━〔 ALL FITURE • BEBAS SPAM • ANTI KENON 〕━━━╮
+╭━━━〔 ALL FITURE • BEBAS SPAM?MYBE  〕━━━╮
 
 📱 ANDROID • BUGS ✦
 │ /xbugs      ➜ 628xxxx
@@ -1111,6 +1111,8 @@ bot.action('/bug', async (ctx) => {
 🍏 IOS • BUGS ✦
 │ /xflow     ➜ 628xxxx
 │ /xenon      ➜ 628xxxx
+
+GW BLM DAPET NOKOS AND FUNC BARU JADI BLM TAU WORK ATAU KAGA TRY AJA , by @Kayrosukamieayam
 ━━━━━━━━━━━━━━━━━━━━━━\`\`\`
 `;
 
