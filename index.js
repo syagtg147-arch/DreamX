@@ -4765,6 +4765,11 @@ async function DelayNgawi(sock, target) {
 
 //menu update
 bot.command("update", async (ctx) => {
+  // CEK OWNER ONLY 
+  if (String(ctx.from.id) !== ownerID) {
+    return ctx.reply("❌ Akses hanya untuk pemilik");
+  }
+
   const repoRaw = "https://raw.githubusercontent.com/syagtg147-arch/DreamX/main/index.js";
   
   ctx.reply("⏳ Sedang mengecek update...");
